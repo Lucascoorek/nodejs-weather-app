@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
           form.reset();
         } else {
           second.textContent = "";
-          first.textContent = `Location: ${data.location}. Weather: ${
+          first.innerHTML = `<p>Location: ${data.location}.</p><p>Weather: ${
             data.forecast
-          }`;
+          }</p>`;
           form.reset();
         }
       });

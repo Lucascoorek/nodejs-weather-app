@@ -7,16 +7,14 @@ function forecast(lat, long, callback) {
     else if (response.statusCode !== 200)
       callback("You messed up the URL", undefined);
     else {
-      const {
-        summary,
-        temperature,
-        precipProbability
-      } = response.body.currently;
+      console.log(response.body);
+      const { summary } = response.body.daily;
+      const { temperature, precipProbability } = response.body.currently;
       callback(
         undefined,
-        `${summary}. The temperature is: ${temperature} C. The chance of rain is ${Math.round(
+        `The temperature is: ${temperature}\u2103. The chance of rain is ${Math.round(
           precipProbability * 100
-        )}%`
+        )}%. ${summary}`
       );
     }
   });
