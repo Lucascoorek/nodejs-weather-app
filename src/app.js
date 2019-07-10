@@ -4,6 +4,7 @@ const hbs = require("hbs");
 const getGeoLoc = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 const app = express();
+const port = process.env.PORT || 3000;
 
 console.log(path.join(__dirname, "../template/partials"));
 
@@ -58,4 +59,4 @@ app.get("*", (req, res) => {
     title: "PAGE NOT FOUND"
   });
 });
-app.listen(3000, () => console.log("Server is running"));
+app.listen(port, () => console.log("Server is running on port: " + port));

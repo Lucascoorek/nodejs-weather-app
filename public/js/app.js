@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     first.textContent = "Loading...";
     second.textContent = "";
-    const url = `http://localhost:3000/weather?address=${input.value}`;
+    const url = `/weather?address=${input.value}`;
     fetch(url)
       .then(respone => respone.json())
       .then(data => {
