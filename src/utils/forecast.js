@@ -7,7 +7,6 @@ function forecast(lat, long, callback) {
     else if (response.statusCode !== 200)
       callback("You messed up the URL", undefined);
     else {
-      console.log(response.body);
       const { summary } = response.body.daily;
       const { temperature, precipProbability } = response.body.currently;
       callback(
